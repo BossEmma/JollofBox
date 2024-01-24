@@ -1,0 +1,98 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/film.css'%}">
+    <title>{{ movie.title }}</title>
+</head>
+<body>
+
+    {% include "top_nav.html" %}
+
+    <div id="main">
+
+        {% include "side_nav.html" %}
+
+        <div id="main2">
+            <div id="main3">
+
+                <section id="film">
+                    <div id="poster">
+                        <img src="{{ movie.poster }}">
+                    </div>
+                        
+                    <div id="film-info">
+                        <text id="title">{{movie.title}}</text>
+                        
+                        <p id="summary">{{ movie.summary }}</p>
+                        
+                        <div id="genre">
+                            {% for gen in genres  %}
+                            <span class="genre-span">{{ gen.genre }}</span>                 
+                            {% endfor %}
+
+                        </div>
+
+                        <div id="film-meta-info">
+                            <div class="meta-info">
+                                <b><i class="fa-solid info-icon fa-calendar-days"></i>&nbsp;&nbsp;Release Date: </b>
+                                <text>{{ movie.release_date }}</text>
+                            </div>
+
+                            <div class="meta-info">
+                                <b><i class="fa-solid info-icon fa-globe"></i>&nbsp;&nbsp;Language: </b>
+                                <text>{{ movie.language }}</text>
+                            </div>
+
+                            <div class="meta-info">
+                                <b><i class="fa-solid info-icon fa-industry"></i>&nbsp;&nbsp;Industry: </b>
+                                <text>{{ movie.industry }}</text>    
+                            </div>   
+
+                            <div class="meta-info">
+                                <b><i class="fa-solid info-icon fa-star-half-stroke"></i>&nbsp;&nbsp;Rating: </b>
+                                <text class="rating">{{ movie.rating }}</text>    
+                            </div>   
+
+                            <div class="meta-info">
+                                <b><i class="fa-solid info-icon fa-building"></i>&nbsp;&nbsp;Company: </b>
+                                <text>{{ movie.company }}</text>    
+                            </div> 
+
+                            <div class="meta-info">
+                                <b><i class="fa-solid info-icon fa-clock"></i>&nbsp;&nbsp;Runtime: </b>
+                                <text>{{ movie.runtime }}</text>    
+                            </div> 
+                        </div>
+
+                        <div id="Share">
+                            <h1>Share:</h1>
+                            <div id="share-links">
+                                <a id="facebook" href="#" class="share-link"><i class="fa-brands fa-facebook"></i></a>
+                                <a id="reddit" href="#" class="share-link"><i class="fa-brands fa-reddit-alien"></i></a>
+                                <a id="twitter" href="#" class="share-link"><i class="fa-brands fa-twitter"></i></a>
+                                <a id="whatsapp" href="#" class="share-link"><i class="fa-brands fa-whatsapp"></i></a>
+                                <a id="email" href="#" class="share-link"><i class="fa-solid fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <div id="youtube">
+                    <iframe src="https://www.youtube.com/embed/Y9d2G3l3UO4" frameborder="0"></iframe>
+                </div>
+
+                <div id="download">
+                    <a href="#" id="download-btn">Download&nbsp;&nbsp;<i class="fa-solid fa-download"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    {% include "bottom_nav.html" %}
+
+</body>
+</html>

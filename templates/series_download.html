@@ -1,0 +1,97 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/film.css'%}">
+    <title>{{ series.title }}</title>
+</head>
+<body>
+    {% include "top_nav.html" %}
+
+    <div id="main">
+        {% include "side_nav.html" %}
+
+        <div id="main2">
+            <div id="main3">
+                <section id="film">
+                    <div id="poster">
+                        <img src="{{ series.poster }}">
+                    </div>
+                        
+        
+                    <div id="film-info">
+                        <text id="title">{{series.title}}</text>
+                        
+                        <p id="summary">{{ series.summary }}</p>
+                        
+                        <div id="genre">
+                            {% for gen in genres  %}
+                            <span class="genre-span">{{ gen.genre }}</span>                 
+                            {% endfor %}
+                        </div>
+        
+                        <div id="film-meta-info">
+                            <div class="meta-info">
+                                <b><i class="fa-solid info-icon fa-calendar-days"></i>&nbsp;&nbsp;Release Date: </b>
+                                <text>{{ series.release_date }}</text>
+                            </div>
+
+                            <div class="meta-info">
+                                <b><i class="fa-solid info-icon fa-globe"></i>&nbsp;&nbsp;Language: </b>
+                                <text>{{ series.language }}</text>
+                            </div>
+
+                            <div class="meta-info">
+                                <b><i class="fa-solid info-icon fa-industry"></i>&nbsp;&nbsp;Industry: </b>
+                                <text>{{ series.industry }}</text>    
+                            </div>    
+
+                            <div class="meta-info">
+                                <b><i class="fa-solid info-icon fa-building"></i>&nbsp;&nbsp;Company: </b>
+                                <text>{{ series.company }}</text>    
+                            </div> 
+                        </div>
+        
+                        
+                        <div id="Share">
+                            <h1>Share:</h1>
+        
+                            <div id="share-links">
+                                <a id="facebook" href="#" class="share-link"><i class="fa-brands fa-facebook"></i></a>
+                                <a id="reddit" href="#" class="share-link"><i class="fa-brands fa-reddit-alien"></i></a>
+                                <a id="twitter" href="#" class="share-link"><i class="fa-brands fa-twitter"></i></a>
+                                <a id="whatsapp" href="#" class="share-link"><i class="fa-brands fa-whatsapp"></i></a>
+                                <a id="email" href="#" class="share-link"><i class="fa-solid fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+        
+                    
+                </section>
+        
+                <section id="episodes-list">
+                    {% for episode in episodes %}
+                    <div class="episode-link">
+                        <div>
+                            <a href="#" class="link">{{ episode.season }} - Episode {{ episode.episode }}</a>
+        
+                            <div id="rating">
+                                <text class="rating">{{ episode.rating }}</text> 
+                            </div>
+        
+                        </div>     
+                    </div>
+                    {% endfor %}
+                </section>
+
+            </div>
+        </div>
+        
+    </div>
+    
+    {% include "bottom_nav.html" %}
+</body>
+</html>

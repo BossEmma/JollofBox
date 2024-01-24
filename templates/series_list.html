@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/film_list.css'%}">
+    <title>JollofBox | Series</title>
+</head>
+<body>
+    {% include "top_nav.html" %}
+
+    <div id="main">
+        {% include "side_nav.html" %}
+        
+        <div id="main2">
+            <div id="main3">
+                <h2>Latest Series</h2>
+
+                <div id="result-list">
+                 
+                    {% for serie in paginated_objects %}          
+                        <a href="{% url 'series' title=serie.title %}" class="film">
+                                <div class="poster">
+                                    <img src="{{ serie.poster }}">
+                                </div>
+                                <div id="title">
+                                    <h4 class="title">{{ serie.title }}</h4>
+                                    <text>{{ serie.release_date }}</text>
+                                </div>
+                            </a>
+                    {% endfor %}
+
+                </div>
+
+                <div class="pagination">
+                    <span class="step-links">
+                        {% if paginated_objects.has_previous %}
+                            <a href="?page=1">&laquo; first</a>
+                            <a href="?page={{ paginated_objects.previous_page_number }}">previous</a>
+                        {% endif %}
+                
+                        <span class="current">
+                            Page {{ paginated_objects.number }} of {{ paginated_objects.paginator.num_pages }}.
+                        </span>
+                
+                        {% if paginated_objects.has_next %}
+                            <a href="?page={{ paginated_objects.next_page_number }}">next</a>
+                            <a href="?page={{ paginated_objects.paginator.num_pages }}">last &raquo;</a>
+                        {% endif %}
+                    </span>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    {% include "bottom_nav.html" %}
+</body>
+</html>
