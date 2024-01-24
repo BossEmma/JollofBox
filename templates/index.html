@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <title>JollofBox</title>
+
+</head>
+<body>
+    {% include "top_nav.html" %}
+    <div id="main">
+        {% include "side_nav.html" %}
+        <div id="main2">
+            <div id="discover">
+                <h1>Discover</h1>
+                <div id="discover-carousel">
+                    {% for movie in movies %}
+                    
+                    <a href="{% url 'movies' title=movie.title %}" class="discover-con">
+                        <div class="poster-con"><img src="{{ movie.poster }}"/></div>
+                        <div class="film-info">
+                            <text class="film-name">{{ movie.title }}</text>
+                        </div>
+                    </a>
+
+                    {% endfor %}            
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% include "bottom_nav.html" %}
+</body>
+</html>

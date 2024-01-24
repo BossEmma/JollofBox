@@ -1,0 +1,28 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/nav.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<script src="{% static 'js/script.js' %}"></script>
+<nav id="top-nav">
+    <div id="nav-con">
+        <a id="navctrl">&#9776;</a>
+        <text id="logo">Jollof<text id="logo2">Box</text></text>
+
+        <div id="nav-links">
+            <a href="{% url 'home' %}" class="nav-links">Home</a>
+            <a href="{% url 'movies_list' %}" class="nav-links">Movies</a>
+            <a href="{% url 'series_list' %}" class="nav-links">Series</a>
+            <a href="{% url 'support' %}" class="nav-links">Support</a>
+            <a href="{% url 'advertise' %}" class="nav-links">Advertise</a>
+            <a href="{% url 'contact' %}" class="nav-links">Contact</a>
+        </div>
+        
+        <form id="nav-form" method="POST">{% csrf_token %}
+            <div id="form-con">
+                <input id="input-box" type="text" placeholder="Search" required name="search"/>
+                <button type="submit" id="submit">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>       
+        </form> 
+    </div>
+</nav>
