@@ -102,4 +102,4 @@ class Episode(models.Model):
 @receiver(pre_save, sender=Movie)
 @receiver(pre_save, sender=TvSerie)
 def convert_name_to_upper(sender, instance, **kwargs):
-    instance.title = instance.title.upper()
+    instance.title = instance.title.capitalize()

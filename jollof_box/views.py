@@ -144,8 +144,8 @@ def series_list(request):
 
 
 
-def box_office(request):
-    return render(request, "box_office.html")
+#def box_office(request):
+#    return render(request, "box_office.html")
 
 
 
@@ -192,25 +192,25 @@ def series_download(request, title):
 
 
 
-def advertise(request):
-    return render(request, "advertise.html")
+#def advertise(request):
+#    return render(request, "advertise.html")
 
 
 
-def support(request):
-    return render(request, "support.html")
+#def support(request):
+#    return render(request, "support.html")
 
 
 
-def contact(request):
-    return render(request, "contact.html")
+#def contact(request):
+#    return render(request, "contact.html")
 
 
 
-def privacy(request):
-    return render(request, "privacy.html")
+#def privacy(request):
+#    return render(request, "privacy.html")
 
 
 
-def disclaimer(request):
-    return render(request, "disclaimer.html")
+#def disclaimer(request):
+#    return render(request, "disclaimer.html")
