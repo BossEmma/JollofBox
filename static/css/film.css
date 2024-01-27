@@ -203,10 +203,6 @@ body{
     padding-bottom: 5px;
 }
 
-#rating{
-    width: 25%;
-}
-
 
 @media screen and (max-width: 1000px) {
     #main{

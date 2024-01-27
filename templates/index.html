@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
-    <title>JollofBox</title>
+    <title>JollofBox | Home</title>
 
 </head>
 <body>
@@ -14,20 +14,77 @@
         {% include "side_nav.html" %}
         <div id="main2">
             <div id="discover">
-                <h1>Discover</h1>
+                <text class="section-header">Discover</text>
                 <div id="discover-carousel">
-                    {% for movie in movies %}
+                    {% for film in discover_movies %}
                     
-                    <a href="{% url 'movies' title=movie.title %}" class="discover-con">
-                        <div class="poster-con"><img src="{{ movie.poster }}"/></div>
+                    <a href="{% url 'movies' title=film.title %}" class="discover-con">
+                        <div class="poster-con"><img src="{{ film.poster }}"/></div>
                         <div class="film-info">
-                            <text class="film-name">{{ movie.title }}</text>
+                            <text class="film-name">{{ film.title }}</text>
+                            <text>{{film.release_date}}</text>
                         </div>
                     </a>
 
                     {% endfor %}            
                 </div>
             </div>
+
+            <div class="section">
+                <text class="section-header">Latest Series</text>
+
+                <div class="wrapper">
+                    {% for film in series %}
+                    <a href="{% url 'series' title=film.title %}" class="wrapper-con">
+                        <div class="poster-con"><img src="{{ film.poster }}"/></div>
+                        <div class="film-info">
+                            <text class="film-name">{{ film.title }}</text>
+                            <text>{{film.release_date}}</text>
+                        </div>
+                    </a>
+                    {% endfor %} 
+                </div>
+            </div>
+
+            
+            <div class="section">
+                <div id="section-head">
+                   <text class="section-header">Movies</text>
+
+                   <select id="movieFilter" onchange="handleMovieFilter()">
+                        <option value="latest">Latest</option>
+                        <option value="trending">Trending</option>
+                    </select> 
+                </div>
+                
+
+                <div class="wrapper" id="latest">
+                    {% for film in movies %}
+                    <a href="{% url 'movies' title=film.title %}" class="wrapper-con">
+                        <div class="poster-con"><img src="{{ film.poster }}"/></div>
+                        <div class="film-info">
+                            <text class="film-name">{{ film.title }}</text>
+                            <text>{{film.release_date}}</text>
+                        </div>
+                    </a>
+                    {% endfor %} 
+                </div>
+
+                <div class="wrapper" id="trending">
+                    {% for film in trending_movies %}
+                    <a href="{% url 'movies' title=film.title %}" class="wrapper-con">
+                        <div class="poster-con"><img src="{{ film.poster }}"/></div>
+                        <div class="film-info">
+                            <text class="film-name">{{ film.title }}</text>
+                            <text>{{film.release_date}}</text>
+                        </div>
+                    </a>
+                    {% endfor %} 
+                </div>
+            </div>
+
+
+
         </div>
     </div>
 

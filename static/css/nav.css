@@ -48,7 +48,7 @@
 
 
 #nav-links{
-    width: 40%;
+    width: 25%;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -60,9 +60,8 @@
     text-align: center;
     padding-top: 10px;
     padding-bottom: 10px;
-    width: 16%;
+    width: 30%;
     color: var(--jb-black);
-
 }
 
 .nav-links:hover{
@@ -125,6 +124,8 @@ footer{
     width: 100%;
     padding-bottom: 10px;
     padding-top: 10px;
+    margin-bottom: 0;
+    margin-top: 200px;
 }
 
 
