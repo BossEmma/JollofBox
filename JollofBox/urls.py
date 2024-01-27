@@ -15,8 +15,6 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from django.conf import settings
-from django.conf.urls.static import static
 from jollof_box import views
 
 urlpatterns = [
@@ -27,17 +25,16 @@ urlpatterns = [
     path('series/', views.series_list, name="series_list"),
     path('movies/', views.movie_list, name="movies_list"),  
 
-    path('box-office/', views.box_office, name="box-office"),  
+    #path('box-office/', views.box_office, name="box-office"),  
     
     path('series/<str:title>/', views.series_download, name="series"),
     path('movies/<str:title>/', views.movie_download, name="movies"),
 
-    path('advertise/', views.advertise, name="advertise"),
-    path('support/', views.support, name="support"),
-    path('contact/', views.contact, name="contact"),
-    path('disclaimer/', views.disclaimer, name="disclaimer"),
-    path('privacy/', views.privacy, name="privacy"),
-    
-]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    #path('advertise/', views.advertise, name="advertise"),
+    #path('support/', views.support, name="support"),
+    #path('contact/', views.contact, name="contact"),
+    #path('disclaimer/', views.disclaimer, name="disclaimer"),
+    #path('privacy/', views.privacy, name="privacy"),   
+]
 
 handler404 = 'jollof_box.views.handle404'
