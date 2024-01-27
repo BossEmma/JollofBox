@@ -1,0 +1,19 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/nav.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<div id="SideNav">
+    <form id="mobile-nav" method="POST">{% csrf_token %}
+        <div id="form-con">
+            <input id="input-box" type="text" placeholder="Search" required name="search"/>
+            <button type="submit" id="submit">
+                <center><i class="fa-solid fa-magnifying-glass"></i></center>
+            </button>
+        </div>     
+    </form>    
+    <a href="{% url 'home' %}"><i class="fa-solid icon fa-house"></i>&nbsp;&nbsp;Home</a>
+    <a href="{% url 'movies_list' %}"><i class="fa-solid icon fa-video"></i>&nbsp;&nbsp;Movies</a>
+    <a href="{% url 'series_list' %}"><i class="fa-solid icon fa-film"></i>&nbsp;&nbsp;Tv Series</a>
+    <!--<a href="{% url 'home' %}"><i class="fa-solid icon fa-hand-holding-dollar"></i>&nbsp;&nbsp;Support Us</a>
+    <a href="{% url 'home' %}"><i class="fa-solid icon fa-bullhorn"></i>&nbsp;&nbsp;Advertise</a>
+    <a href="{% url 'home' %}"><i class="fa-solid icon fa-headset"></i>&nbsp;&nbsp;Contact</a>-->  
+</div>

@@ -1,0 +1,27 @@
+<h1>Movies</h1>
+<div id="set">
+    {% for movie in movies %}
+    <a href="{% url 'movies' title=movie.title %}" class="movie-con">
+        <div class="movie-poster">
+            <img class="poster" src="{{ movie.poster }}">
+        </div>
+        <div class="name-con">
+            <text class="movie-name">{{ movie.title }}</text>
+        </div>    
+    </a>       
+    {% endfor %}
+</div>
+
+<h1>TVseries</h1>
+<div id="set">
+    {% for serie in series %}
+    <a href="{% url 'series' title=serie.title %}" class="movie-con">
+        <div class="movie-poster">
+            <img class="poster" src="{{ serie.poster }}">
+        </div>
+        <div class="name-con">
+            <text class="movie-name">{{ serie.title }}</text>
+        </div>    
+    </a>       
+    {% endfor %}
+</div>
