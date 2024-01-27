@@ -35,22 +35,25 @@ body{
 }
 
 #main3{
-    width: 95%;
+    width: 90%;
     display: flex;
     flex-direction: column;
 }
 
-#result-list{
+.film-list{
     width: 100%;
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 50px;
+    justify-content: space-around;
 }
 
 .film{
     display: flex;
     flex-direction: column;
-    width: 160px;
+    width: 200px;
+    height: 350px;
     text-decoration: none;
     color: var(--jb-black);
 }
@@ -65,7 +68,7 @@ body{
     width: 100%;
     overflow: hidden;
     border-radius: 5px;
-    height: 230px;
+    height: 100%;
 }
 
 .poster img{
@@ -107,32 +110,9 @@ body{
     margin-right: 5px;
 }
 
-@media screen and (max-width: 1000px) {
-    #main{
-        width: 100%;
-        display:flex;
-        flex-direction: row;
-        justify-content: space-between;
-    }
 
-}
-
-@media screen and (max-width: 549px) {
-    #result-list{
-        justify-content: space-between;
-    }
-
-    .film{
-        width: 150px;
-    }
-
-
-}
-
-
-@media screen and (max-width: 515px) {
-
-    #result-list{
+@media screen and (max-width: 577px) {
+    .film-list{
         justify-content: space-between;
         gap: 0px;
     }
@@ -148,7 +128,7 @@ body{
 
 }
 
-@media screen and (max-width: 280px) {
+@media screen and (max-width: 350px) {
     .film{
         width: 100%;
 

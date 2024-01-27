@@ -15,3 +15,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
+function handleMovieFilter() {
+    var selectedOption = document.getElementById("movieFilter").value;
+  
+    if (selectedOption === "latest") {
+        display_latest_movies();
+    } else if (selectedOption === "trending") {
+        display_trending_movies();
+    }
+}
+  
+
+function display_latest_movies() {
+    document.getElementById("latest").style.display = "flex";
+    document.getElementById("trending").style.display = "none";
+}
+
+function display_trending_movies() {
+    document.getElementById("latest").style.display = "none";
+    document.getElementById("trending").style.display = "flex";
+}
+
+
+

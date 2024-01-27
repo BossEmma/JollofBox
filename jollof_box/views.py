@@ -2,6 +2,7 @@ from django.shortcuts import render, HttpResponseRedirect, redirect
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .models import Movie, TvSerie, Season, Episode
 from fuzzywuzzy import fuzz
+from random import sample
 
 # Create your views here.
 
@@ -14,9 +15,13 @@ def handle404(request, exception):
 
 
 def home(request):
-    movies= Movie.objects.all().order_by('-release_date')[:5]
-    series= TvSerie.objects.all()
-    
+    movies= Movie.objects.all().order_by('-release_date')[:20]
+    trending_movies= Movie.objects.all().order_by('-trending')[:20]
+    all_movies = Movie.objects.all().order_by('?')
+    discover_movies = sample(list(all_movies), min(20, all_movies.count()))
+    series= TvSerie.objects.all().order_by('-release_date')[:20]
+
+
     if request.method== "POST":
         search= request.POST["search"]
         search= search.upper()
@@ -24,6 +29,8 @@ def home(request):
 
     context={
         "movies": movies, 
+        "trending_movies": trending_movies,
+        "discover_movies": discover_movies,
         "series":series,
     }   
     return render(request, "index.html", context)
@@ -85,7 +92,7 @@ def movie_list(request):
         search= search.upper()
         return redirect('search', search=search)
     
-    objects_per_page = 30
+    objects_per_page = 20
     paginator = Paginator(movies, objects_per_page)
     page = request.GET.get('page')
     try:
@@ -115,7 +122,7 @@ def series_list(request):
         search= search.upper()
         return redirect('search', search=search)
     
-    objects_per_page = 4  
+    objects_per_page = 20  
     paginator = Paginator(series, objects_per_page)
     page = request.GET.get('page')
     try:
