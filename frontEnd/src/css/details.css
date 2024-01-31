@@ -1,0 +1,160 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.details-container{
+    background-image: linear-gradient(#fffffff5, #dcdcdc99);
+}
+
+.details-display {
+    max-width: 1536px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.details-display-body{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.download-tab{
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* border-left: 2px solid black; */
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.card-poster{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.card-details h1{
+    font-size: 2.7rem;
+    letter-spacing: 1;
+}
+
+.card-details p{
+    font-size: 1.3rem;
+    padding-top: 5px;
+}
+
+.card-poster-overview{
+    max-width: 70%;
+}
+
+.card-poster-overview h2{
+    font-size: 2.5rem;
+    letter-spacing: 1;
+    padding-bottom: 8px;
+}
+
+.card-poster-overview  p{
+    font-size: 1.0rem;
+    padding-top: 5px;
+    line-height: 20px;
+}
+
+
+.cast-details p{
+    font-size: 1.0rem;
+    padding-top: 5px;
+}
+
+.card-poster img{
+    width: 230px;
+    height: auto;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    margin: 10px;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+.cast-details img {
+    width: 70px; /* Adjust as needed */
+    height: 70px; /* Adjust as needed */
+    border-radius: 50%; /* Optional: creates a circular image */
+    margin-bottom: 5px; /* Space between image and name */
+}
+
+.cast-details {
+    display: flex;
+    flex-direction: column; /* Stacks items vertically */
+    align-items: center; /* Centers items horizontally */
+    text-align: center; /* Centers text */
+}
+
+.cast-container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; /* Allows items to wrap onto the next line */
+    gap: 20px; /* Optional: adds space between items */
+}
+
+.download-btn{
+    color: white;
+    background-color: #6187ea;
+    font-size: 1.2rem;
+    width: 100%;
+    margin-top: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-style: none;
+    border-radius: 20px;
+}
+
+.download-btn:hover{
+    cursor: pointer;
+}
+
+@media screen and (max-width: 520px) {
+    .details-display-body{
+        width: 100%;
+        margin: 0 auto;
+        padding: 10px;
+        display: block;
+    }
+
+    .card-poster{
+        display: block;
+    }
+
+    .card-poster img{
+        width: 100%;
+        object-fit: cover;
+        margin: 0 auto;
+    }
+
+    .card-poster-overview{
+        max-width: 100%;
+        margin-top: 10px;
+    }
+
+    .download-tab{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-left: 2px solid black;
+        padding: 10px;
+        margin-top: 20px;
+    }
+}

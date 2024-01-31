@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/frontEnd/src/css/home.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--first div, containing the nav and the hero section-->
+    <div class="nav-container">
+      <!--the nav bar-->
+      <nav role="navigation">
+        <h1><a href="#hero" id="logo">JollofBox</a></h1>
+        <ul class="navigation">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+          <li><a href="#ad">Place an ad</a></li>
+        </ul>
+        <div class="search-box">
+          <input type="text" placeholder="search" />
+          <button class="btn">Search</button>
+        </div>
+
+        <div id="hamburger" class="hamburger">
+          <svg
+            class="ham hamRotate ham1"
+            id="menu"
+            viewBox="0 0 100 100"
+            width="80"
+            onclick="this.classList.toggle('active')"
+          >
+            <path
+              class="line top"
+              d="m 30,33 h 40 c 0,0 9.044436,-0.654587 9.044436,-8.508902 0,-7.854315 -8.024349,-11.958003 -14.89975,-10.85914 -6.875401,1.098863 -13.637059,4.171617 -13.637059,16.368042 v 40"
+            />
+            <path class="line middle" d="m 30,50 h 40" />
+            <path
+              class="line bottom"
+              d="m 30,67 h 40 c 12.796276,0 15.357889,-11.717785 15.357889,-26.851538 0,-15.133752 -4.786586,-27.274118 -16.667516,-27.274118 -11.88093,0 -18.499247,6.994427 -18.435284,17.125656 l 0.252538,40"
+            />
+          </svg>
+        </div>
+
+        <div class="hamburger-tab" id="hamburger-tab">
+          <div class="ham-content">
+            <h1><a href="#hero" id="logo">JollofBox</a></h1>
+            <ul class="navigation">
+              <li><a href="#hero">Home</a></li>
+              <li><a href="#contact">Contact Us</a></li>
+              <li><a href="#ad">Place an ad</a></li>
+            </ul>
+            <div class="search-box">
+              <input type="text" placeholder="search" />
+              <button class="btn">Search</button>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <!--the main body of the code-->
+    <main>
+      <!--first container-->
+      <div class="content-container">
+        <h1>Discover</h1>
+        <div class="display-movies">
+          <div id="movie-container" class="movie-container"></div>
+        </div>
+      </div>
+
+      <!--second container-->
+      <div class="content-container">
+        <h2>Browse Cetegory</h2>
+        <!-- Genre Selection -->
+        <div id="genre-container" class="genre-container"></div>
+        <div class="display-movies">
+          <!-- Movie Cards Container -->
+          <div id="movie-containerr" class="movie-containerr"></div>
+        </div>
+      </div>
+
+      <!--third container-->
+      <div class="content-container">
+        <h2>Your Entertainment Choice</h2>
+        <div class="custom-select">
+          <span class="selected-value">Select Media</span>
+          <ul class="select-options" style="display: none">
+            <li data-value="all">All</li>
+            <li data-value="Movie">Movies</li>
+            <li data-value="Series">Series</li>
+          </ul>
+        </div>
+        <!-- Media Container -->
+        <div id="media-container" class="media-container"></div>
+      </div>
+
+      <!--footer content-->
+      <footer>
+        <div class="footer-body">
+          <p>Join our community today.</p>
+        </div>
+      </footer>
+    </main>
+    <script src="/frontEnd/src/js/script.js"></script>
+    <script src="/frontEnd/src/js/movieData.js"></script>
+    <script src="/frontEnd/src/js/details.js"></script>
+  </body>
+</html>
